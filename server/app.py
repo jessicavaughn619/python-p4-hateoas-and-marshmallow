@@ -108,8 +108,6 @@ class NewsletterByID(Resource):
         db.session.add(newsletter)
         db.session.commit()
 
-        response_dict = record.to_dict()
-
         response = make_response(
             newsletter_schema.dump(newsletter),
             200
